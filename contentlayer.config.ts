@@ -13,15 +13,6 @@ const prettyCodeOptions = {
 const generateTableOfContent = (html: string) => {
   //extract heading
   const headings = html.matchAll(/<(h[1-6])\sid=\".*?\">(.*?)<\/h/g);
-  /*   const headings = html.matchAll(
-    /<(h[1-6])\sid=\"(.*?)\">.*?((?!<)(.*?)|<a.*?>(.*?))</g
-  ); 
-  const table = [...headings].map(
-    (heading) =>
-      `<a href="#${heading[2]}"><div class="${heading[1]}">${
-        heading[5] != null ? heading[5] : heading[4]
-      }</div></a>`
-  );*/
   const table = [...headings].map(
     (heading) => `<div class="${heading[1]}">${heading[2]}</div>`
   );
@@ -58,6 +49,7 @@ export default makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
   markdown: {
+    //@ts-expect-error
     remarkPlugins: [remarkDirective, remarkDirectiveRehype, remarkGfm],
     rehypePlugins: [
       rehypeSlug,

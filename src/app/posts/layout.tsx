@@ -1,5 +1,4 @@
 import BreadCrumbs from '@/components/BreadCrumbs';
-import Script from 'next/script';
 
 export default function CategoryLayout({
   children,

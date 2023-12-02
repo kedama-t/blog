@@ -21,7 +21,7 @@ export default function Profile() {
   return (
     <div className="flex flex-row gap-4 rounded-xl bg-primary-200 p-4">
       <Link href={`https://github.com/${GITHUB_USERID}`}>
-        <img src="./avatar.jpg" className="block rounded-xl h-20 w-20" />
+        <img src="./avatar.jpg" className="block h-20 w-20 rounded-xl" />
       </Link>
       <div className="flex flex-col justify-between">
         <p className="text-xl font-bold">{AUTHOR}</p>

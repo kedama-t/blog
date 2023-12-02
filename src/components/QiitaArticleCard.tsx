@@ -11,7 +11,7 @@ export default function QiitaArticleCard(props: {
   const { title, date, pageViews, likes, stocks } = props;
   return (
     <article className="card">
-      <h3 className="border-b border-secondary text-on-secondary-50 text-xl font-extrabold">
+      <h3 className="border-b border-secondary text-xl font-extrabold text-on-secondary-50">
         <SiQiita />
         {title}
         <FaExternalLinkAlt className="inline-block pl-2" />

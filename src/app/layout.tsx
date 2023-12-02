@@ -58,13 +58,13 @@ export default function RootLayout({
           <Theme.Provider className="min-h-screen">
             <nav
               className="nav-bg fixed inset-x-0 top-0 flex h-12 flex-row
-            justify-between p-2 px-4 shadow-2xl border-b-2 border-primary-300"
+            justify-between border-b-2 border-primary-300 p-2 px-4 shadow-2xl"
             >
               <Link href="/">
-                <h1 className="hidden h-8 w-80 text-2xl font-bold nav-button lg:block">
+                <h1 className="nav-button hidden h-8 w-80 text-2xl font-bold lg:block">
                   {bread}&nbsp;{TITLE}
                 </h1>
-                <div className="block h-8 w-16 lg:hidden text-xl font-bold nav-button">
+                <div className="nav-button block h-8 w-16 text-xl font-bold lg:hidden">
                   {bread}
                 </div>
               </Link>
@@ -72,7 +72,7 @@ export default function RootLayout({
                 {Array.from(CATEGORIES).map((pair) => (
                   <div
                     key={pair[0]}
-                    className="mt-1 text-on-primary-200 font-bold"
+                    className="mt-1 font-bold text-on-primary-200"
                   >
                     <Link href={`/posts/${pair[0]}`}>
                       {CATEGORIES.get(pair[0])}
@@ -81,12 +81,12 @@ export default function RootLayout({
                 ))}
               </div>
               <Theme.Switcher
-                className="block h-8 w-16 text-lg font-regular nav-button lg:hidden"
+                className="nav-button block h-8 w-16 text-lg font-normal lg:hidden"
                 nameOnLight="🌆"
                 nameOnDark="🌅"
               />
               <Theme.Switcher
-                className="hidden h-8 w-64 text-lg font-regular nav-button lg:block"
+                className="nav-button hidden h-8 w-64 text-lg font-normal lg:block"
                 nameOnLight="🌆Dark mode"
                 nameOnDark="🌅Light mode"
               />
@@ -98,11 +98,11 @@ export default function RootLayout({
 
             <nav
               className="nav-bg fixed inset-x-0 bottom-0 flex h-12 flex-row
-            justify-center gap-8 pt-2 px-4 text-on-primary-200 border-t-2 border-primary-300"
+            justify-center gap-8 border-t-2 border-primary-300 px-4 pt-2 text-on-primary-200"
             >
               <p className="mt-1.5 text-sm">&copy; {AUTHOR}</p>
               <div className="flex flex-row gap-2">
-                <p className="mt-1.5 text-sm hidden md:block">Visit me on </p>
+                <p className="mt-1.5 hidden text-sm md:block">Visit me on </p>
                 <Link href={`https://github.com/${GITHUB_USERID}`}>
                   <FaGithub size="2em" />
                 </Link>
@@ -111,7 +111,7 @@ export default function RootLayout({
                 </Link>
               </div>
               <div className="flex flex-row gap-2">
-                <p className="mt-1.5 text-sm hidden md:block">Powered by </p>
+                <p className="mt-1.5 hidden text-sm md:block">Powered by </p>
                 <Link href="https://nextjs.org/">
                   <SiNextdotjs size="2em" />
                 </Link>

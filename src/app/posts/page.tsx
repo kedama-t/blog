@@ -5,16 +5,10 @@ import ArticleCard from '@/components/ArticleCard';
 import GridWithHeader from '@/components/GridWithHeader';
 import { sortFunction } from '@/lib/utils';
 
-export default function List(params: {
-  params: { category: string };
-  searchParams: { page?: string };
-}) {
-  const page = params.searchParams.page
-    ? parseInt(params.searchParams.page)
-    : 0;
+export default function List() {
   const posts = allPosts
     .sort(sortFunction)
-    .slice(page * ARTICLES_PER_PAGE, ARTICLES_PER_PAGE);
+    //.slice(page * ARTICLES_PER_PAGE, ARTICLES_PER_PAGE);
   return (
     <GridWithHeader header="記事一覧">
       {posts.map((post, index) => (

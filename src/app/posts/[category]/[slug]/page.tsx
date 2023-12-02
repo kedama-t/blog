@@ -2,7 +2,7 @@ import { allPosts } from 'contentlayer/generated';
 
 export const generateStaticParams = async () => {
   return allPosts.map((post) => {
-    const [category, slug] = post._id.split('/');
+    const [category, slug] = post._raw.flattenedPath.split('/');
     return {
       category,
       slug,
@@ -36,9 +36,9 @@ export default function PostLayout({
 
   return (
     <article className="mx-auto py-8">
-      <div className="mx-auto max-w-7xl px-8 flex flex-row gap-2">
+      <div className="mx-auto flex max-w-7xl flex-row gap-2 px-8">
         <div>
-          <h2 className="mx-auto max-w-6xl mb-6 border-b-2 border-secondary text-4xl font-extrabold text-on-secondary-50">
+          <h2 className="mx-auto mb-6 max-w-6xl border-b-2 border-secondary text-4xl font-extrabold text-on-secondary-50">
             {post.emoji}&nbsp;{post.title}
           </h2>
           <div
@@ -47,7 +47,7 @@ export default function PostLayout({
           />
         </div>
         <div
-          className="hidden mx-auto w-80 text-sm lg:block"
+          className="mx-auto hidden w-80 text-sm lg:block"
           dangerouslySetInnerHTML={{ __html: post.toc }}
         />
       </div>

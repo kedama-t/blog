@@ -11,7 +11,7 @@ export default function ArticleCard(props: {
   const { title, emoji, date, description, category, tags } = props;
   return (
     <article className="card">
-      <h3 className="border-b border-secondary text-on-secondary-50 text-xl font-extrabold">
+      <h3 className="border-b border-secondary text-xl font-extrabold text-on-secondary-50">
         <div className="flex flex-row justify-between">
           {emoji}&nbsp;{title}
           <div className="text-sm text-on-secondary-200">
