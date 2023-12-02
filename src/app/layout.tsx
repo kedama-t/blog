@@ -55,7 +55,7 @@ export default function RootLayout({
         className={`${asciiFont.variable} ${bodyFont.variable} ${codeFont.variable}`}
       >
         <Theme>
-          <Theme.Provider className="min-h-screen">
+          <Theme.Provider className="min-h-screen overflow-hidden">
             <nav
               className="nav-bg fixed inset-x-0 top-0 flex h-12 flex-row
             justify-between border-b-2 border-primary-300 p-2 px-4 shadow-2xl"

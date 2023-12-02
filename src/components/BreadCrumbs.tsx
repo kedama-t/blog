@@ -18,7 +18,7 @@ export default function BreadCrumbs() {
             suppressHydrationWarning={true}
             href={`/${pathName.slice(0, index + 1).join('/')}`}
           >
-            {getRandomBreadEmoji()} {path}
+            {getRandomBreadEmoji()}&nbsp;{path}
           </Link>
         </p>
       ))}

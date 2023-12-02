@@ -35,19 +35,19 @@ export default function PostLayout({
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
   return (
-    <article className="mx-auto py-8">
-      <div className="mx-auto flex max-w-7xl flex-row gap-2 px-8">
-        <div>
-          <h2 className="mx-auto mb-6 max-w-6xl border-b-2 border-secondary text-4xl font-extrabold text-on-secondary-50">
+    <article className="py-8">
+      <div className="flex flex-row gap-2 px-8">
+        <div className="w-full">
+          <h2 className="mb-6 border-b-2 border-secondary text-4xl font-extrabold text-on-secondary-50">
             {post.emoji}&nbsp;{post.title}
           </h2>
           <div
-            className="markdown mx-auto max-w-5xl px-8"
+            className="markdown lg:px-8"
             dangerouslySetInnerHTML={{ __html: post.body.html }}
           />
         </div>
         <div
-          className="mx-auto hidden w-80 text-sm lg:block"
+          className="hidden w-80 text-sm lg:block"
           dangerouslySetInnerHTML={{ __html: post.toc }}
         />
       </div>

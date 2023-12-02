@@ -47,7 +47,7 @@ export default async function Top() {
           <GridWithHeader
             key={category}
             header={
-              <Link href={`/${category}`}>{CATEGORIES.get(category)}</Link>
+              <Link href={`/posts/${category}`}>{CATEGORIES.get(category)}</Link>
             }
           >
             {postsWithCategory.map((post, index) => (
