@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-ascii), var(--font-body), sans-serif;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+@layer components {
+  .nav-button {
+    @apply text-center rounded-xl bg-primary-200 text-on-primary-200;
+  }
+  .nav-bg {
+    @apply backdrop-blur-md bg-gradient-to-r from-primary-50/50 to-primary-200/70 from-20% to-80%;
+  }
+  .card-bg {
+    @apply bg-gradient-to-br from-secondary-100 to-secondary-200 to-90%;
+  }
+  .card-bg:hover {
+    @apply bg-gradient-to-br from-primary-100 to-primary-200 to-90%;
+  }
+  .card {
+    @apply rounded-xl card-bg text-on-secondary-200 text-left p-4 shadow-lg;
+  }
+  a:hover {
+    @apply underline decoration-primary-200;
+  }
+}
+@layer components {
+  .markdown {
+    @apply flex flex-col gap-2;
+  }
+  .markdown a {
+    @apply underline decoration-primary-400;
+  }
+  .markdown a:hover {
+    @apply underline decoration-primary-200 rounded-md bg-tertiary-100 text-on-tertiary-100;
+  }
+  .markdown table {
+    @apply border-2 border-primary-400;
+  }
+  .markdown th {
+    @apply px-1 border-2 border-primary-400 bg-primary-200 text-on-primary-200;
+  }
+  .markdown td {
+    @apply px-1 border-2 border-primary-400;
+  }
+  .markdown tr {
+    @apply px-1 border-2 border-primary-400;
+  }
+  .markdown pre {
+    @apply rounded-xl p-4;
+  }
+  .markdown h1 {
+    @apply font-extrabold border-b-2 border-secondary-300 text-3xl text-on-secondary-100 pt-12;
+  }
+  .markdown h2 {
+    @apply font-bold border-b-2 border-secondary-200 text-2xl text-on-secondary-200 mb-1 pt-12;
+  }
+  .markdown h3 {
+    @apply font-bold border-b-2 border-secondary-100 text-xl text-on-secondary-50 mb-1 pt-12;
+  }
+  .markdown h4,
+  .markdown h5,
+  .markdown h6 {
+    @apply font-bold text-lg text-on-secondary-50 mb-1 pt-12;
+  }
+  .markdown blockquote {
+    @apply border-l-4 border-tertiary-400 rounded-r-xl bg-tertiary-200 text-on-tertiary-200 p-2 mx-2 my-2;
+  }
+  .markdown p {
+    @apply lg:text-lg text-on-secondary-50 indent-2;
+  }
+  .markdown :not(pre) > code {
+    @apply lg:text-lg rounded-md border-2 border-tertiary-400 bg-tertiary-200 text-on-tertiary-200;
+  }
+  .markdown ul > li {
+    @apply lg:text-lg text-on-secondary-50 list-disc ml-4 my-1;
+  }
+  .markdown ol > li {
+    @apply lg:text-lg text-on-secondary-50 list-decimal ml-4 my-1;
+  }
+  .markdown > * {
+    @apply mb-3;
+  }
+  .markdown > *:last-child {
+    @apply mb-0;
+  }
+  .markdown .icon {
+    @apply inline-block before:content-['🔗'] text-sm no-underline text-primary/30;
+  }
+  .markdown .icon:hover {
+    @apply text-primary;
+  }
+
+  /* custom directives */
+  .markdown tag-primary {
+    @apply inline-block px-3 mx-1 rounded-xl border-2 border-primary-400 font-medium bg-primary-200 text-on-primary-200;
+  }
+  .markdown tag-secondary {
+    @apply inline-block px-3 mx-1 rounded-xl border-2 border-secondary-400 font-medium bg-secondary-200 text-on-secondary-200;
+  }
+  .markdown tag-tertiary {
+    @apply inline-block px-3 mx-1 rounded-xl border-2 border-tertiary-400 font-medium bg-tertiary-200 text-on-tertiary-200;
+  }
+  .markdown tag-error {
+    @apply inline-block px-3 mx-1 rounded-xl border-2 border-error-400 font-medium bg-error-200 text-on-error-200;
+  }
+  .markdown tag-warning {
+    @apply inline-block px-3 mx-1 rounded-xl border-2 border-warning-400 font-medium bg-warning-200 text-on-warning-200;
+  }
+  .markdown tag-notice {
+    @apply inline-block px-3 mx-1 rounded-xl border-2 border-notice-400 font-medium bg-notice-200 text-on-notice-200;
+  }
+  .markdown note-primary {
+    @apply block border-l-4 border-primary-400 rounded-r-xl bg-primary-200 text-on-primary-200 p-2 mx-2 my-2;
+  }
+  .markdown note-secondary {
+    @apply block border-l-4 border-secondary-400 rounded-r-xl bg-secondary-200 text-on-secondary-200 p-2 mx-2 my-2;
+  }
+  .markdown note-tertiary {
+    @apply block border-l-4 border-tertiary-400 rounded-r-xl bg-tertiary-200 text-on-tertiary-200 p-2 mx-2 my-2;
+  }
+  .markdown note-error {
+    @apply block border-l-4 border-error-400 rounded-r-xl bg-error-200 text-on-error-200 p-2 mx-2 my-2;
+  }
+  .markdown note-warning {
+    @apply block border-l-4 border-warning-400 rounded-r-xl bg-warning-200 text-on-warning-200 p-2 mx-2 my-2;
+  }
+  .markdown note-notice {
+    @apply block border-l-4 border-notice-400 rounded-r-xl bg-notice-200 text-on-notice-200 p-2 mx-2 my-2;
+  }
+}
+
+@layer components {
+  .toc {
+    @apply before:content-['📜目次'] px-4 pt-4 text-lg fixed;
+  }
+  .toc .h1,
+  .toc .h2 {
+    @apply before:content-['🔖'] border-b-2 border-secondary-400 text-on-secondary-100 my-2 pt-2 text-sm;
+  }
+  .toc .h3 {
+    @apply border-b border-secondary-100 text-on-secondary-100 my-2 ml-6 text-sm;
+  }
+  .toc .h4,
+  .toc .h5,
+  .toc .h6 {
+    @apply border-b border-secondary-50 text-on-secondary-50 py-2 ml-12 text-xs;
+  }
+  .toc .icon {
+    @apply inline-block before:content-['🔗'] text-sm no-underline text-primary/30;
+  }
+  .toc .icon:hover {
+    @apply text-primary;
+  }
+}
