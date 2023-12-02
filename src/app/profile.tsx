@@ -26,7 +26,7 @@ export default function Profile() {
       <div className="flex flex-col justify-between">
         <p className="text-xl font-bold">{AUTHOR}</p>
         <p className="text-sm text-primary-700">Software Developer</p>
-        <div className="flex flex-row gap-2 text-primary-700">
+        <div className="flex flex-row flex-wrap gap-2 text-primary-700">
           <SiStackblitz title="Stackblitz" />
           <SiJavascript title="JavaScript" />
           <SiTypescript title="TypeScript" />

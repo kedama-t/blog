@@ -53,7 +53,7 @@ code {
     @apply px-1 border-2 border-primary-400;
   }
   .markdown pre {
-    @apply rounded-xl p-4;
+    @apply rounded-xl p-4 overflow-x-scroll;
   }
   .markdown h1 {
     @apply font-extrabold border-b-2 border-secondary-300 text-3xl text-on-secondary-100 pt-12;

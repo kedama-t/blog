@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function BreadCrumbs() {
   const pathName = usePathname().split('/').slice(1);
   return (
-    <nav className="flex flex-row gap-2">
+    <nav className="flex flex-row flex-wrap gap-2">
       <Link href="/">
         <p suppressHydrationWarning={true}>{getRandomBreadEmoji()}</p>
       </Link>
