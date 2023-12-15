@@ -5,6 +5,7 @@ import remarkDirectiveRehype from 'remark-directive-rehype';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
+import generateRss from "./rss";
 
 const prettyCodeOptions = {
   theme: 'rose-pine-moon',
@@ -57,4 +58,10 @@ export default makeSource({
       [rehypePrettyCode, { ...prettyCodeOptions }],
     ],
   },
+  onSuccess: (async (importData) => {
+    // generate rss feed
+    const { allPosts } = await importData()
+    generateRss(allPosts);
+  })
 });
+

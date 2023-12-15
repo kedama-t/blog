@@ -1,4 +1,4 @@
-import { allPosts, Post } from 'contentlayer/generated';
+import type { Post } from 'contentlayer/generated';
 import { ICONS, QIITA_USERID } from './const';
 
 export const sortFunction = (a: Post, b: Post) => {
@@ -17,7 +17,7 @@ export const sortFunction = (a: Post, b: Post) => {
   return 0;
 };
 
-export const getCategories = () => {
+export const getCategories = (allPosts: Post[]) => {
   return allPosts.reduce(
     (prev, post) => Array.from(new Set([...prev, post.category])),
     [] as string[]

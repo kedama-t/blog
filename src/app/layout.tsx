@@ -2,6 +2,7 @@ import './globals.css';
 import Theme from '@/components/Theme/index';
 import {
   TITLE,
+  DESCRIPTION,
   CATEGORIES,
   AUTHOR,
   GITHUB_USERID,
@@ -37,7 +38,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: `${getRandomBreadEmoji()} ${TITLE} | 技術と読書のメモブログ`,
+  title: `${getRandomBreadEmoji()} ${TITLE} | ${DESCRIPTION}`,
   description: '毛玉Tのブログ',
 };
 

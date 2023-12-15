@@ -1,4 +1,4 @@
 # Kedama-T のブログ
 - [ ] ページネーション
-- [ ] RSS Feed
+- [x] RSS Feed
 - [ ] OGP Images
