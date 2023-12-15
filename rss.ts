@@ -6,18 +6,15 @@ import { DESCRIPTION, TITLE, URL_BASE } from './src/lib/const';
 const generateRss = (allPosts: Post[]) => {
   const path = './public/rss.xml'
   const items = allPosts.sort(sortFunction).splice(0, 10).map(post => {
-    return `
-<item>
+    return `<item>
 <guid>${URL_BASE}${post.url}</guid>
 <title>${post.title}</title>
 <link>${URL_BASE}${post.url}</link>
 <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-</item>
-`
+</item>`
   })
 
-  const rss = `
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  const rss = `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>${TITLE}</title>
 <link>${URL_BASE}</link>
@@ -25,8 +22,7 @@ const generateRss = (allPosts: Post[]) => {
 <atom:link href="${URL_BASE}/rss.xml" rel="self" type="application/rss+xml" />
 ${items.join('')}
 </channel>
-</rss>
-`
+</rss>`
   fs.writeFileSync(path, rss)
 }
 
