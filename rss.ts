@@ -9,6 +9,7 @@ const generateRss = (allPosts: Post[]) => {
     return `<item>
 <guid>${URL_BASE}${post.url}</guid>
 <title>${post.title}</title>
+<description>${post.description}</description>
 <link>${URL_BASE}${post.url}</link>
 <pubDate>${new Date(post.date).toUTCString()}</pubDate>
 </item>`
